@@ -1,12 +1,15 @@
 name: Auto Assign to Project(s)
-​
+
 on:
+
   issues:
     types: [opened]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-​
+
+
 jobs:
+
   assign_one_project:
     runs-on: ubuntu-latest
     name: Assign to One Project
