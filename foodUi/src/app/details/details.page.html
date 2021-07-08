@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar color="liht">
+  <ion-toolbar color="light">
     <ion-buttons slot="start">
-      <ion-buton fill="solid" shape="round" color="liht" routerLink="/home">
+      <ion-button fill="solid" shape="round" color="light" routerLink="/home">
         <ion-icon slot="icon-only" name="arrow-back" color="primary"></ion-icon>
-      </ion-buton>
+      </ion-button>
     </ion-buttons>
     <ion-title>{{ data?.name }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="solid" shape="round" color="liht">
+      <ion-button fill="solid" shape="round" color="light">
         <ion-icon slot="icon-only" name="search-outline" color="primary"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true" scrollEvens="true" (ionScroll)="onScroll($event)">
+<ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)="onScroll($event)" [appParallax] = "img">
 
   <div #img class="header-image" [style.background-image]="'url(' + data?.img + ')'"></div>
 
@@ -78,7 +78,7 @@
           <ion-slide *ngFor="let entry of data.food; let i = index;">
             <ion-button [class.active-category]="activeCategory == i" fill="clear"
             (click)="selectCategory(i)">
-              {{ entry.cateory }}
+              {{ entry.category }}
           </ion-button>
           </ion-slide>
         </ion-slides>
